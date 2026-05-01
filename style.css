@@ -1,129 +1,65 @@
-/* --- GENEL AYARLAR VE YAZI TİPİ --- */
-/* Modern bir yazı tipi (Poppins) Google Fonts'tan yükleniyor */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 body {
-    background-color: #f4f7f6; /* Çok hafif, gözü yormayan gri-beyaz arka plan */
-    font-family: 'Poppins', sans-serif; /* Ana yazı tipi */
-    color: #1a1a1a; /* Koyu ama tam siyah olmayan ana yazı rengi */
+    background-color: #f4f7f6;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
-    padding: 0;
-    line-height: 1.6; /* Rahat okuma için satır arası boşluk */
 }
 
-/* --- MENÜ ÇUBUĞU (NAVBAR) --- */
+/* NAVBAR AYARLARI */
 .navbar {
-    background-color: #001f3f !important; /* Premium Koyu Lacivert */
-    padding: 15px 0; /* Menüyü biraz daha dikeyde genişletelim */
-    box-shadow: 0 4px 12px rgba(0, 31, 63, 0.15); /* Hafif gölge */
-    border-bottom: 3px solid #002a5c; /* Altına çok ince bir ton farkı */
+    background-color: #001f3f !important;
+    position: fixed !important;
+    top: 0;
+    width: 100%;
+    z-index: 10000 !important;
+    padding: 15px 0;
+    border-bottom: 3px solid #3498db;
 }
 
-.navbar-brand {
+.navbar-brand, .nav-link {
+    color: white !important;
+}
+
+.name-text {
+    color: #3498db;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #ffffff !important;
 }
 
-.nav-link {
-    color: #ffffff !important;
-    font-weight: 400;
-    margin-left: 15px; /* Menü öğeleri arası boşluk */
-    transition: all 0.3s ease; /* Hover efekti için geçiş */
-    border-bottom: 2px solid transparent; /* Alttaki çizgi için ön hazırlık */
-}
-
-.nav-link:hover {
-    color: #3498db !important; /* Üzerine gelince canlı mavi */
-    border-bottom: 2px solid #3498db; /* Altta mavi çizgi belirir */
-}
-
-/* --- ANA İÇERİK KUTUSU (CONTAINER) --- */
-.container {
-    background: #ffffff; /* Saf Beyaz */
+/* ANA KUTU HİZALAMASI (Yazıları Menüden Kurtaran Kısım) */
+.main-content {
+    background: white;
     padding: 50px;
-    border-radius: 15px; /* Yumuşak köşeler */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Çok hafif, modern bir gölge */
-    margin-top: 60px;
+    border-radius: 20px;
+    margin-top: 130px !important; /* Boşluğu biraz daha artırdım */
     margin-bottom: 60px;
-    border: 1px solid #eee; /* Hafif sınır çizgisi */
 }
 
-/* --- BAŞLIKLAR --- */
-h1 {
-    color: #001f3f; /* Lacivert */
-    font-weight: 700;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-h3 {
-    color: #003366; /* Biraz daha açık lacivert */
-    font-weight: 600;
-    margin-top: 30px;
-    margin-bottom: 15px;
-}
-
-/* --- HOBİLER LİSTESİ --- */
-.list-group {
-    border-radius: 10px;
-    overflow: hidden; /* Köşelerin yuvarlak kalması için */
-    border: 1px solid #eee;
-}
-
-.list-group-item {
+.card {
     border: none;
-    border-bottom: 1px solid #eee;
-    color: #001f3f;
-    font-weight: 400;
-    padding: 15px 20px;
     transition: 0.3s;
 }
 
-.list-group-item:last-child {
-    border-bottom: none; /* Son öğenin alt çizgisini kaldıralım */
+.card:hover {
+    transform: translateY(-10px);
+    background-color: #f1f4f9;
 }
 
-.list-group-item:hover {
-    background-color: #f1f4f9; /* Üzerine gelince hafif gri-mavi arka plan */
-    color: #001f3f;
-    padding-left: 30px; /* Sağa doğru hafifçe kayma efekti */
-}
-
-/* --- FOTOĞRAF ALANI (GEÇİCİ) --- */
-.bg-secondary {
-    background-color: #001f3f !important; /* Gri yerine lacivert yapalım */
+.profile-placeholder {
+    width: 180px;
+    height: 180px;
+    background: #001f3f;
     color: white;
-    border-radius: 15px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    height: 250px; /* Sabit yükseklik */
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 5px 15px rgba(0, 31, 63, 0.2);
+    margin: 0 auto;
 }
 
-/* --- YOUTUBE VİDEO ALANI --- */
-.ratio {
-    border-radius: 15px;
-    overflow: hidden; /* Köşeleri yuvarla */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    border: 1px solid #eee;
-}
-
-/* --- ALT BİLGİ (FOOTER) --- */
 footer {
-    background-color: #001f3f; /* Lacivert */
-    color: rgba(255, 255, 255, 0.8); /* Tam beyaz değil, hafif şeffaf beyaz */
-    padding: 40px 0;
-    margin-top: 50px;
-    font-size: 0.9rem;
+    background-color: #001f3f;
+    color: white;
+    padding: 30px 0;
     text-align: center;
-}
-
-footer p {
-    margin: 0;
-    letter-spacing: 1px;
 }
