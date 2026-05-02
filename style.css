@@ -62,4 +62,14 @@ footer {
     color: white;
     padding: 30px 0;
     text-align: center;
+} 
+/* Progress Bar Ayarları */
+.progress {
+    height: 10px;
+    border-radius: 5px;
+}
+
+.table {
+    border-radius: 10px;
+    overflow: hidden;
 }
