@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MHD AMIR IDRES - İletişim</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Amir Idres</a>
+            <div class="navbar-nav">
+                <a class="nav-link" href="index.html">Hakkında</a>
+                <a class="nav-link" href="cv.html">Özgeçmiş</a>
+                <a class="nav-link" href="sehir.html">Şehrim</a>
+                <a class="nav-link" href="mirasimiz.html">Mirasımız</a>
+                <a class="nav-link active" href="iletisim.html">İletişim</a>
+                <a class="nav-link" href="login.php">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container main-content shadow">
+        <h2 class="text-center mb-4">İletişim</h2>
+        <div class="row">
+            <div class="col-md-5">
+                <div class="p-4 bg-light rounded-4 h-100">
+                    <h4>Bana Ulaşın</h4>
+                    <p>Sorularınız veya iş birliği talepleriniz için aşağıdaki bilgileri kullanabilir veya formu doldurabilirsiniz.</p>
+                    <hr>
+                    <p><strong>📍 Konum:</strong> Sakarya, Türkiye</p>
+                    <p><strong>📧 E-posta:</strong> amir.idres@ogr.sakarya.edu.tr</p>
+                    <p><strong>🎓 Okul:</strong> Sakarya Üniversitesi</p>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <form action="gonder.php" method="POST" class="p-3">
+                    <div class="mb-3">
+                        <label class="form-label">Adınız Soyadınız</label>
+                        <input type="text" name="ad_soyad" class="form-control" placeholder="Örn: Ahmet Yılmaz" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">E-posta Adresiniz</label>
+                        <input type="email" name="email" class="form-control" placeholder="adiniz@ornek.com" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Konu</label>
+                        <select name="konu" class="form-select">
+                            <option value="Genel">Genel Soru</option>
+                            <option value="Odev">Ödev Hakkında</option>
+                            <option value="Is">İş Birliği</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Mesajınız</label>
+                        <textarea name="mesaj" class="form-control" rows="4" placeholder="Mesajınızı buraya yazınız..." required></textarea>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">Gönder</button>
+                        <button type="reset" class="btn btn-outline-secondary btn-sm">Formu Temizle</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 - MHD AMIR IDRES | Sakarya Üniversitesi</p>
+    </footer>
+
+</body>
+</html>
