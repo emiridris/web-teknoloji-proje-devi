@@ -7,10 +7,30 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Sadece bu sayfaya özel, kart resimlerinin boyunu sabitlemek için */
+        /* Slider Resim Ayarları */
+        .carousel-item img {
+            height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        /* Kart Resim Ayarları */
         .card-img-top {
             height: 200px;
-            object-fit: cover; /* Resmi sığdırmak için keser, esnetmez */
+            object-fit: cover;
+        }
+        /* Yazıların okunabilirliği için gölge */
+        .carousel-caption {
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            padding: 10px;
+            bottom: 30px;
+        }
+        .main-content {
+            padding: 40px;
+            background: white;
+            border-radius: 15px;
+            margin-top: 30px;
+            margin-bottom: 30px;
         }
     </style>
 </head>
@@ -19,7 +39,7 @@
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="index.html">Amir Idres</a>
-            <div class="navbar-nav">
+            <div class="navbar-nav ms-auto">
                 <a class="nav-link" href="index.html">Hakkında</a>
                 <a class="nav-link" href="cv.html">Özgeçmiş</a>
                 <a class="nav-link active" href="sehir.html">Şehrim</a>
@@ -30,77 +50,111 @@
         </div>
     </nav>
 
-    <div class="container main-content shadow">
-        <h2 class="text-center mb-4">Şehrim: Sakarya</h2>
-        
+    <div class="container main-content shadow-lg">
+        <h2 class="text-center mb-5">Şehrim: Sakarya</h2>
+
+        <div id="sakaryaCarousel" class="carousel slide shadow mb-5" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#sakaryaCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#sakaryaCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#sakaryaCarousel" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#sakaryaCarousel" data-bs-slide-to="3"></button>
+                <button type="button" data-bs-target="#sakaryaCarousel" data-bs-slide-to="4"></button>
+                <button type="button" data-bs-target="#sakaryaCarousel" data-bs-slide-to="5"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/sapanca.jpg" class="d-block w-100" alt="Sapanca">
+                    <div class="carousel-caption"><h5>Sapanca Gölü</h5></div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/karasu.jpg" class="d-block w-100" alt="Karasu">
+                    <div class="carousel-caption"><h5>Karasu Sahili</h5></div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/golyapark.jpg" class="d-block w-100" alt="Gölya Park">
+                    <div class="carousel-caption"><h5>Gölya Park</h5></div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/golpark.jpg" class="d-block w-100" alt="Göl Park">
+                    <div class="carousel-caption"><h5>Göl Park</h5></div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/beskopru.jpg" class="d-block w-100" alt="Justinianus">
+                    <div class="carousel-caption"><h5>Justinianus Köprüsü</h5></div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/tarakli.jpg" class="d-block w-100" alt="Taraklı">
+                    <div class="carousel-caption"><h5>Taraklı Evleri</h5></div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#sakaryaCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#sakaryaCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+
         <div class="row g-4">
             <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                    <img src="img/sapanca.jpg" class="card-img-top" alt="Sapanca Gölü">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="img/sapanca.jpg" class="card-img-top" alt="Sapanca">
                     <div class="card-body">
                         <h5 class="card-title">Sapanca Gölü</h5>
                         <p class="card-text small">Sakarya'nın en meşhur doğal güzelliğidir. Su sporları ve dinlenme alanlarıyla ünlüdür.</p>
                     </div>
                 </div>
             </div>
-
             <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                    <img src="img/karasu.jpg" class="card-img-top" alt="Karasu Plajı">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="img/karasu.jpg" class="card-img-top" alt="Karasu">
                     <div class="card-body">
                         <h5 class="card-title">Karasu</h5>
-                        <p class="card-text small">Karadeniz kıyısındaki geniş plajları ve kum zambaklarıyla Sakarya'nın deniz turizmi merkezidir.</p>
+                        <p class="card-text small">Karadeniz kıyısındaki geniş plajları ve kum zambaklarıyla Sakarya'nın merkezidir.</p>
                     </div>
                 </div>
             </div>
-
             <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                    <img src="img/golyapark.jpg" class="card-img-top" alt="Gölya Park">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="img/golyapark.jpg" class="card-img-top" alt="Gölya">
                     <div class="card-body">
                         <h5 class="card-title">Gölya Park</h5>
-                        <p class="card-text small">Arifiye'de bulunan, doğa yürüyüşleri ve göl manzaralı dinlenme alanları sunan modern bir parktır.</p>
+                        <p class="card-text small">Doğa yürüyüşleri ve göl manzaralı dinlenme alanları sunan modern bir parktır.</p>
                     </div>
                 </div>
             </div>
-
             <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                    <img src="img/golpark.jpg" class="card-img-top" alt="Serdivan Göl Park">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="img/golpark.jpg" class="card-img-top" alt="Göl Park">
                     <div class="card-body">
                         <h5 class="card-title">Göl Park</h5>
-                        <p class="card-text small">Sapanca Gölü'nün Serdivan kıyısında yer alan, akşam yürüyüşleri için vazgeçilmez bir sosyal alandır.</p>
+                        <p class="card-text small">Sapanca Gölü kıyısında akşam yürüyüşleri için vazgeçilmez bir alandır.</p>
                     </div>
                 </div>
             </div>
-
             <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                    <img src="img/beskopru.jpg" class="card-img-top" alt="Justinianus Köprüsü">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="img/beskopru.jpg" class="card-img-top" alt="Justinianus">
                     <div class="card-body">
                         <h5 class="card-title">Justinianus Köprüsü</h5>
-                        <p class="card-text small">Bizans döneminden kalma bu tarihi köprü, şehrin en eski mimari yapılarından biridir.</p>
+                        <p class="card-text small">Bizans döneminden kalma, şehrin en eski tarihi mimari yapılarından biridir.</p>
                     </div>
                 </div>
             </div>
-
             <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                    <img src="img/tarakli.jpg" class="card-img-top" alt="Taraklı Tarihi Evleri">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="img/tarakli.jpg" class="card-img-top" alt="Taraklı">
                     <div class="card-body">
                         <h5 class="card-title">Taraklı Evleri</h5>
-                        <p class="card-text small">Tarihi dokusu bozulmamış Osmanlı evleri ile Sakarya'nın "Sakin Şehir" unvanlı ilçesidir.</p>
+                        <p class="card-text small">Tarihi dokusu bozulmamış Osmanlı evleri ile Sakarya'nın incisidir.</p>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="alert alert-info mt-5">
-            <strong>Keşfedilecek Çok Yer Var!</strong> Sakarya: gölleri, yaylaları ve deniziyle her mevsim farklı güzellikler sunar.
         </div>
     </div>
 
-    <footer>
+    <footer class="text-center py-4 bg-dark text-white">
         <p>&copy; 2026 - MHD AMIR IDRES | Sakarya Üniversitesi</p>
     </footer>
 
