@@ -7,24 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Slider Resim Ayarları */
-        .carousel-item img {
-            height: 500px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-        /* Kart Resim Ayarları */
-        .card-img-top {
-            height: 200px;
-            object-fit: cover;
-        }
-        /* Yazıların okunabilirliği için gölge */
-        .carousel-caption {
-            background: rgba(0, 0, 0, 0.6);
-            border-radius: 15px;
-            padding: 10px;
-            bottom: 30px;
-        }
+        body { background-color: #f4f7f6; }
         .main-content {
             padding: 40px;
             background: white;
@@ -32,11 +15,57 @@
             margin-top: 30px;
             margin-bottom: 30px;
         }
+        /* YENİ DEV BAŞLIK STİLİ */
+        .ana-baslik {
+            font-size: 4.5rem; /* Oldukça büyük boyut */
+            font-weight: 900;
+            color: #001f3f;
+            text-transform: uppercase;
+            letter-spacing: 12px;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        }
+        .nufus-kart {
+            background: linear-gradient(45deg, #001f3f, #003366);
+            color: white;
+            border: none;
+            border-radius: 15px;
+        }
+        .sub-title {
+            color: #001f3f;
+            font-weight: bold;
+            margin-top: 40px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        .carousel-item img {
+            height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+        }
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        .gezgin-notu {
+            background-color: #e9ecef;
+            border-left: 5px solid #001f3f;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="index.html">Amir Idres</a>
             <div class="navbar-nav ms-auto">
@@ -51,103 +80,112 @@
     </nav>
 
     <div class="container main-content shadow-lg">
-        <h2 class="text-center mb-5">Şehrim: Sakarya</h2>
+        <h1 class="text-center ana-baslik">SAKARYA</h1>
+
+        <div class="row mb-4 justify-content-center">
+            <div class="col-md-10">
+                <div class="card nufus-kart shadow-lg p-4 text-center">
+                    <div class="row">
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <h2 class="fw-bold">1.098.115</h2>
+                            <p class="mb-0 opacity-75">Toplam Nüfus</p>
+                        </div>
+                        <div class="col-md-4 mb-3 mb-md-0 border-start border-end border-light border-opacity-25">
+                            <h2 class="fw-bold">16</h2>
+                            <p class="mb-0 opacity-75">İlçe Sayısı</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h2 class="fw-bold">54</h2>
+                            <p class="mb-0 opacity-75">Plaka Kodu</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mb-2">
+            <div class="col-md-10">
+                <div class="p-3 gezgin-notu shadow-sm">
+                    <strong>💡 Gezgin Notu:</strong> Sakarya'nın güzelliklerini keşfetmek için aşağıdaki "İncele" butonlarını kullanarak doğrudan Vikipedi bilgilerine ulaşabilirsiniz.
+                </div>
+            </div>
+        </div>
+
+        <h3 class="sub-title">Şehrimin Güzel Yerleri</h3>
 
         <div id="sakaryaCarousel" class="carousel slide shadow mb-5" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#sakaryaCarousel" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#sakaryaCarousel" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#sakaryaCarousel" data-bs-slide-to="2"></button>
-                <button type="button" data-bs-target="#sakaryaCarousel" data-bs-slide-to="3"></button>
-                <button type="button" data-bs-target="#sakaryaCarousel" data-bs-slide-to="4"></button>
-                <button type="button" data-bs-target="#sakaryaCarousel" data-bs-slide-to="5"></button>
-            </div>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="img/sapanca.jpg" class="d-block w-100" alt="Sapanca">
-                    <div class="carousel-caption"><h5>Sapanca Gölü</h5></div>
-                </div>
-                <div class="carousel-item">
-                    <img src="img/karasu.jpg" class="d-block w-100" alt="Karasu">
-                    <div class="carousel-caption"><h5>Karasu Sahili</h5></div>
-                </div>
-                <div class="carousel-item">
-                    <img src="img/golyapark.jpg" class="d-block w-100" alt="Gölya Park">
-                    <div class="carousel-caption"><h5>Gölya Park</h5></div>
-                </div>
-                <div class="carousel-item">
-                    <img src="img/golpark.jpg" class="d-block w-100" alt="Göl Park">
-                    <div class="carousel-caption"><h5>Göl Park</h5></div>
-                </div>
-                <div class="carousel-item">
-                    <img src="img/beskopru.jpg" class="d-block w-100" alt="Justinianus">
-                    <div class="carousel-caption"><h5>Justinianus Köprüsü</h5></div>
-                </div>
-                <div class="carousel-item">
-                    <img src="img/tarakli.jpg" class="d-block w-100" alt="Taraklı">
-                    <div class="carousel-caption"><h5>Taraklı Evleri</h5></div>
-                </div>
+                <div class="carousel-item active"><img src="img/sapanca.jpg" class="d-block w-100" alt="Sapanca"></div>
+                <div class="carousel-item"><img src="img/karasu.jpg" class="d-block w-100" alt="Karasu"></div>
+                <div class="carousel-item"><img src="img/golyapark.jpg" class="d-block w-100" alt="Gölya Park"></div>
+                <div class="carousel-item"><img src="img/golpark.jpg" class="d-block w-100" alt="Göl Park"></div>
+                <div class="carousel-item"><img src="img/beskopru.jpg" class="d-block w-100" alt="Justinianus"></div>
+                <div class="carousel-item"><img src="img/tarakli.jpg" class="d-block w-100" alt="Taraklı"></div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#sakaryaCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#sakaryaCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
+            <button class="carousel-control-prev" type="button" data-bs-target="#sakaryaCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+            <button class="carousel-control-next" type="button" data-bs-target="#sakaryaCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
         </div>
+
+        <h3 class="sub-title">Sakarya'da Gezilecek Yerler</h3>
 
         <div class="row g-4">
             <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0">
+                <div class="card h-100 shadow-sm text-center">
                     <img src="img/sapanca.jpg" class="card-img-top" alt="Sapanca">
                     <div class="card-body">
-                        <h5 class="card-title">Sapanca Gölü</h5>
-                        <p class="card-text small">Sakarya'nın en meşhur doğal güzelliğidir. Su sporları ve dinlenme alanlarıyla ünlüdür.</p>
+                        <h5 class="card-title fw-bold">Sapanca Gölü</h5>
+                        <p class="card-text small text-muted">Sakarya'nın doğal harikası.</p>
+                        <a href="https://tr.wikipedia.org/wiki/Sapanca_G%C3%B6l%C3%BC" target="_blank" class="btn btn-outline-dark btn-sm rounded-pill px-4">İncele</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0">
+                <div class="card h-100 shadow-sm text-center">
                     <img src="img/karasu.jpg" class="card-img-top" alt="Karasu">
                     <div class="card-body">
-                        <h5 class="card-title">Karasu</h5>
-                        <p class="card-text small">Karadeniz kıyısındaki geniş plajları ve kum zambaklarıyla Sakarya'nın merkezidir.</p>
+                        <h5 class="card-title fw-bold">Karasu Sahili</h5>
+                        <p class="card-text small text-muted">Türkiye'nin en uzun plajlarından.</p>
+                        <a href="https://tr.wikipedia.org/wiki/Karasu,_Sakarya" target="_blank" class="btn btn-outline-dark btn-sm rounded-pill px-4">İncele</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0">
+                <div class="card h-100 shadow-sm text-center">
                     <img src="img/golyapark.jpg" class="card-img-top" alt="Gölya">
                     <div class="card-body">
-                        <h5 class="card-title">Gölya Park</h5>
-                        <p class="card-text small">Doğa yürüyüşleri ve göl manzaralı dinlenme alanları sunan modern bir parktır.</p>
+                        <h5 class="card-title fw-bold">Gölya Park</h5>
+                        <p class="card-text small text-muted">Serdivan'ın yeni nefes alanı.</p>
+                        <a href="https://tr.wikipedia.org/wiki/Serdivan" target="_blank" class="btn btn-outline-dark btn-sm rounded-pill px-4">İncele</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0">
+                <div class="card h-100 shadow-sm text-center">
                     <img src="img/golpark.jpg" class="card-img-top" alt="Göl Park">
                     <div class="card-body">
-                        <h5 class="card-title">Göl Park</h5>
-                        <p class="card-text small">Sapanca Gölü kıyısında akşam yürüyüşleri için vazgeçilmez bir alandır.</p>
+                        <h5 class="card-title fw-bold">Göl Park</h5>
+                        <p class="card-text small text-muted">Kıyıda huzurlu bir dinlenme noktası.</p>
+                        <a href="https://tr.wikipedia.org/wiki/Arifiye" target="_blank" class="btn btn-outline-dark btn-sm rounded-pill px-4">İncele</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0">
+                <div class="card h-100 shadow-sm text-center">
                     <img src="img/beskopru.jpg" class="card-img-top" alt="Justinianus">
                     <div class="card-body">
-                        <h5 class="card-title">Justinianus Köprüsü</h5>
-                        <p class="card-text small">Bizans döneminden kalma, şehrin en eski tarihi mimari yapılarından biridir.</p>
+                        <h5 class="card-title fw-bold">Beşköprü</h5>
+                        <p class="card-text small text-muted">Tarihi Justinianus Köprüsü.</p>
+                        <a href="https://tr.wikipedia.org/wiki/Justinianus_K%C3%B6pr%C3%BCs%C3%BC" target="_blank" class="btn btn-outline-dark btn-sm rounded-pill px-4">İncele</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0">
+                <div class="card h-100 shadow-sm text-center">
                     <img src="img/tarakli.jpg" class="card-img-top" alt="Taraklı">
                     <div class="card-body">
-                        <h5 class="card-title">Taraklı Evleri</h5>
-                        <p class="card-text small">Tarihi dokusu bozulmamış Osmanlı evleri ile Sakarya'nın incisidir.</p>
+                        <h5 class="card-title fw-bold">Taraklı Evleri</h5>
+                        <p class="card-text small text-muted">Tarihi dokusuyla "Sakin Şehir".</p>
+                        <a href="https://tr.wikipedia.org/wiki/Tarakl%C4%B1" target="_blank" class="btn btn-outline-dark btn-sm rounded-pill px-4">İncele</a>
                     </div>
                 </div>
             </div>
