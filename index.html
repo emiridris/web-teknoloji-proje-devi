@@ -6,75 +6,193 @@
     <title>MHD AMIR IDRES - Hakkında</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Sayfa Geneli */
+        body { background-color: #f8f9fa; }
+        .text-info-custom { color: #0dcaf0; }
+        .bg-dark-blue { background-color: #001f3f; }
+
+        /* Kartlara özel hover efekti */
+        .hobi-link {
+            text-decoration: none !important;
+            color: inherit;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .hobi-link:hover {
+            transform: translateY(-10px);
+        }
+        .hobi-card {
+            transition: all 0.3s ease;
+            border-radius: 15px;
+        }
+        .hobi-link:hover .hobi-card {
+            background-color: #ffffff;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+        }
+
+        /* Footer Stilleri */
+        .social-btn {
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+        .social-btn:hover {
+            transform: translateY(-5px);
+            opacity: 1;
+            color: #0dcaf0 !important;
+        }
+        footer h5 {
+            letter-spacing: 1px;
+            font-size: 1.1rem;
+        }
+    </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark-blue shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Amir Idres</a>
-            <div class="navbar-nav">
-                <a class="nav-link active" href="index.html">Hakkında</a>
-                <a class="nav-link" href="cv.html">Özgeçmiş</a>
-                <a class="nav-link" href="sehir.html">Şehrim</a>
-                <a class="nav-link" href="mirasimiz.html">Mirasımız</a> 
-                <a class="nav-link" href="iletisim.html">İletişim</a>
-                <a class="nav-link" href="login.php">Login</a>
+            <a class="navbar-brand fw-bold" href="index.html">Amir <span class="text-info-custom">Idres</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link active" href="index.html">Hakkında</a>
+                    <a class="nav-link" href="cv.html">Özgeçmiş</a>
+                    <a class="nav-link" href="sehir.html">Şehrim</a>
+                    <a class="nav-link" href="mirasimiz.html">Mirasımız</a>
+                    <a class="nav-link" href="iletisim.html">İletişim</a>
+                    <a class="nav-link" href="login.php">Login</a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <div class="container main-content shadow">
-        <div class="row align-items-center">
+    <main class="container shadow rounded-4 p-4 p-md-5 my-5 bg-white">
+        <section class="row align-items-center mb-5">
             <div class="col-md-4 text-center">
-                <img src="img/profil.jpg" class="img-fluid rounded-circle shadow" alt="Mhd Amir Idres" style="width: 200px; height: 200px; object-fit: cover;">
+                <img src="img/profil.jpg" class="img-fluid rounded-circle shadow-lg border border-5 border-white" alt="Amir Idres" style="width: 250px; height: 250px; object-fit: cover;">
             </div>
             <div class="col-md-8">
-                <h1>Merhaba, Ben <span class="name-text">MHD AMIR IDRES</span></h1>
-                <p class="lead">Sakarya Üniversitesi Bilgisayar Mühendisliği 1. sınıf öğrencisiyim.</p>
-                <p>C++ ve C# dilleriyle ilgileniyorum. Teknolojiye olan merakım ve problem çözme tutkum beni bu bölüme yönlendirdi.</p>
+                <h1 class="display-5 fw-bold mt-3 mt-md-0">Merhaba, Ben <span class="text-primary">MHD AMIR IDRES</span></h1>
+                <p class="lead text-muted">Sakarya Üniversitesi | Bilgisayar Mühendisliği Öğrencisi</p>
+                <p>Teknolojiye duyduğum büyük ilgiyle, karmaşık problemleri basit ve etkili kodlarla çözmeyi hedefliyorum. C++, C# ve modern web teknolojileri üzerinde uzmanlaşmaya çalışıyorum.</p>
+                
+                <div class="mt-4">
+                    <a href="https://github.com/emiridris" target="_blank" class="btn btn-dark btn-lg me-2 shadow-sm">
+                        <i class="fab fa-github"></i> GitHub Profilim
+                    </a>
+                    <a href="cv.html" class="btn btn-outline-primary btn-lg shadow-sm">Özgeçmişimi Gör</a>
+                </div>
             </div>
-        </div>
+        </section>
 
         <hr class="my-5">
 
-        <h2 class="text-center mb-4">Hobilerim ve Etkinliklerim</h2>
-        <div class="row text-center">
-            <div class="col-md-3">
-                <div class="card p-3 shadow-sm h-100">
-                    <h3>🏓</h3>
-                    <h5>Masa Tenisi</h5>
+        <section>
+            <h2 class="text-center mb-5 fw-bold">Hobilerim & İlgi Alanlarım</h2>
+            <div class="row g-4 text-center">
+                <div class="col-md-3">
+                    <a href="https://tr.wikipedia.org/wiki/Masa_tenisi" target="_blank" class="hobi-link">
+                        <div class="card h-100 border-0 shadow-sm p-4 hobi-card">
+                            <div class="mb-3 text-primary"><i class="fas fa-table-tennis-paddle-ball fa-3x"></i></div>
+                            <h5 class="fw-bold">Masa Tenisi</h5>
+                            <p class="small text-muted mb-0">Hızlı düşünme ve refleks geliştirme hobim.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="https://www.chess.com/tr" target="_blank" class="hobi-link">
+                        <div class="card h-100 border-0 shadow-sm p-4 hobi-card">
+                            <div class="mb-3 text-dark"><i class="fas fa-chess fa-3x"></i></div>
+                            <h5 class="fw-bold">Satranç</h5>
+                            <p class="small text-muted mb-0">Stratejik analiz yeteneğimi pekiştiriyorum.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="https://www.imdb.com" target="_blank" class="hobi-link">
+                        <div class="card h-100 border-0 shadow-sm p-4 hobi-card">
+                            <div class="mb-3 text-danger"><i class="fas fa-film fa-3x"></i></div>
+                            <h5 class="fw-bold">Film İzlemek</h5>
+                            <p class="small text-muted mb-0">Sinema dünyasının yaratıcılığından ilham alıyorum.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="sehir.html" class="hobi-link">
+                        <div class="card h-100 border-0 shadow-sm p-4 hobi-card">
+                            <div class="mb-3 text-success"><i class="fas fa-plane fa-3x"></i></div>
+                            <h5 class="fw-bold">Gezmek</h5>
+                            <p class="small text-muted mb-0">Farklı kültürleri keşfetmeyi seviyorum.</p>
+                        </div>
+                    </a>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card p-3 shadow-sm h-100">
-                    <h3>♟️</h3>
-                    <h5>Satranç</h5>
+        </section>
+
+        <section class="py-5 bg-light rounded-4 px-4 mt-5 shadow-sm text-center">
+            <h3 class="mb-4 fw-bold">Sevdiğim Bir Video</h3>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="ratio ratio-16x9 shadow-sm rounded-3 overflow-hidden">
+                        <iframe src="https://www.youtube.com/embed/vOagWanl-Gw" title="YouTube video" allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card p-3 shadow-sm h-100">
-                    <h3>🎬</h3>
-                    <h5>Film İzlemek</h5>
+        </section>
+    </main>
+
+    <footer class="py-5 mt-auto bg-dark-blue text-white">
+        <div class="container">
+            <div class="row gy-4 align-items-start">
+                
+                <div class="col-lg-5 col-md-12 text-center text-lg-start">
+                    <h5 class="fw-bold mb-3 border-bottom border-info d-inline-block pb-1">MHD AMIR IDRES</h5>
+                    <p class="small text-light opacity-75 pe-lg-5">
+                        Yazılım dünyasında sürekli öğrenen ve üreten bir mühendis adayıyım. 
+                        Web teknolojileri ve algoritma tasarımı üzerine projeler geliştiriyorum.
+                    </p>
+                </div>
+
+                <div class="col-lg-4 col-md-6 text-center text-lg-start">
+                    <h5 class="fw-bold mb-3">Hızlı İletişim</h5>
+                    <div class="d-flex flex-column gap-3 justify-content-center justify-content-lg-start">
+                        <div class="d-flex align-items-center justify-content-center justify-content-lg-start">
+                            <i class="fas fa-envelope text-info me-3 fs-5"></i>
+                            <span class="small">amir.idres@sakarya.edu.tr</span>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center justify-content-lg-start">
+                            <i class="fas fa-map-marker-alt text-info me-3 fs-5"></i>
+                            <span class="small">Sakarya / Türkiye</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 text-center text-lg-end">
+                    <h5 class="fw-bold mb-3">Beni Takip Et</h5>
+                    <div class="d-flex justify-content-center justify-content-lg-end gap-4">
+                        <a href="https://github.com/emiridris" target="_blank" class="text-white social-btn" title="GitHub">
+                            <i class="fab fa-github fa-2x"></i>
+                        </a>
+                        <a href="https://www.instagram.com/emiridris54" target="_blank" class="text-white social-btn" title="Instagram">
+                            <i class="fab fa-instagram fa-2x"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card p-3 shadow-sm h-100">
-                    <h3>🗺️</h3>
-                    <h5>Gezmek</h5>
+
+            <hr class="mt-5 mb-4 border-light opacity-25">
+
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0 small text-light opacity-50">
+                        &copy; 2026 - Tüm Hakları Saklıdır | <strong>Web Teknolojileri Projesi</strong>
+                    </p>
                 </div>
             </div>
         </div>
-
-        <div class="mt-5 text-center">
-            <h3>Sevdiğim Bir Video</h3>
-            <div class="ratio ratio-16x9 mt-3 shadow rounded-3 overflow-hidden">
-               <iframe src="https://www.youtube.com/embed/vOagWanl-Gw" title="YouTube video" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2026 - MHD AMIR IDRES | Sakarya Üniversitesi</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
