@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MHD AMIR IDRES - Mirasımız</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #f8f9fa; }
+        .text-info-custom { color: #0dcaf0; }
+        .bg-dark-blue { background-color: #001f3f; }
+
+        /* Tek Eser Tanıtım Alanı */
+        .heritage-detail {
+            padding: 40px 0;
+        }
+        
+        .main-heritage-img {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            margin-bottom: 30px;
+        }
+
+        .info-card {
+            background-color: #f1f8ff;
+            border-left: 5px solid #0dcaf0;
+            padding: 20px;
+            border-radius: 0 15px 15px 0;
+            margin: 20px 0;
+        }
+
+        .section-title {
+            color: #001f3f;
+            font-weight: 700;
+            margin-top: 30px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        /* Görseldeki Kronoloji Kutusu Stili */
+        .timeline-box {
+            background: #fff;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            margin-top: 60px;
+            position: relative;
+            overflow: hidden;
+            border-top: 6px solid #0dcaf0; /* Üstteki mavi çizgi */
+        }
+
+        .timeline-box h3 {
+            font-weight: 800;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .timeline-year {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #0d6efd;
+            margin-bottom: 5px;
+        }
+
+        .timeline-text {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        /* Footer Ayarı */
+        .social-btn { transition: all 0.3s ease; opacity: 0.8; }
+        .social-btn:hover { transform: translateY(-5px); opacity: 1; color: #0dcaf0 !important; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark-blue shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Amir <span class="text-info-custom">Idres</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="index.html">Hakkında</a>
+                    <a class="nav-link" href="cv.html">Özgeçmiş</a>
+                    <a class="nav-link" href="sehir.html">Şehrim</a>
+                    <a class="nav-link active" href="mirasimiz.html">Mirasımız</a>
+                    <a class="nav-link" href="iletisim.html">İletişim</a>
+                    <a class="nav-link" href="login.php">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container shadow rounded-4 p-4 p-md-5 my-5 bg-white">
+        <article class="heritage-detail">
+            <header class="text-center mb-5">
+                <h1 class="display-4 fw-bold mb-3 text-uppercase">Justinianus <span class="text-primary">Köprüsü</span></h1>
+                <p class="lead text-muted">Sakarya'nın Dünya Mirası: Bin Beş Yüz Yıllık Bir Dev</p>
+            </header>
+
+            <img src="img/justinianus.jpg" class="main-heritage-img" alt="Justinianus Köprüsü" onerror="this.src='https://via.placeholder.com/1200x600?text=Justinianus+Köprüsü'">
+
+            <div class="row">
+                <div class="col-lg-8">
+                    <h3 class="section-title">Tarihsel Arka Plan</h3>
+                    <p>
+                        Halk arasında <strong>Beşköprü</strong> olarak bilinen Justinianus Köprüsü, Geç Roma - Erken Bizans döneminin en görkemli yapılarından biridir. Bizans İmparatoru Justinianus tarafından M.S. 558-560 yıllarında inşa ettirilmiştir. Köprü, o dönemde başkent Konstantinopolis ile imparatorluğun doğu eyaletleri arasındaki ulaşımı sağlayan stratejik bir noktada bulunuyordu.
+                    </p>
+
+                    <h3 class="section-title">Mimari Özellikler</h3>
+                    <p>
+                        Yaklaşık 365 metre uzunluğa ve 9,85 metre genişliğe sahip olan köprü, toplam 12 kemerden oluşmaktadır. Yapımında devasa kireçtaşı blokları kullanılmıştır. Köprünün en dikkat çekici özelliklerinden biri, batı ucunda bulunan ve günümüze sadece temelleri ulaşan zafer takıdır.
+                    </p>
+
+                    <div class="info-card">
+                        <h5 class="fw-bold"><i class="fas fa-info-circle me-2"></i>Biliyor muydunuz?</h5>
+                        <p class="mb-0">Köprü günümüzde Sapanca Gölü'nün sularını Sakarya Nehri'ne boşaltan Çark Deresi (antik adıyla Melas) üzerinde yer alsa da, inşa edildiği dönemde çok daha büyük bir nehir yatağı için tasarlandığı düşünülmektedir.</p>
+                    </div>
+
+                    <h3 class="section-title">UNESCO Süreci</h3>
+                    <p>
+                        Justinianus Köprüsü, sahip olduğu evrensel değerler ve korunmuşluk durumu sayesinde 2018 yılında <strong>UNESCO Dünya Mirası Geçici Listesi</strong>'ne dahil edilmiştir. Bu durum, eserin sadece Sakarya için değil, dünya mimarlık tarihi için ne kadar önemli olduğunu tescillemiştir.
+                    </p>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card border-0 shadow-sm bg-light p-4 mt-lg-5">
+                        <h5 class="fw-bold mb-4">Künye</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-3">
+                                <i class="fas fa-calendar-alt text-primary me-2"></i>
+                                <strong>Yapım Tarihi:</strong> M.S. 558-560
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-user-tie text-primary me-2"></i>
+                                <strong>Yaptıran:</strong> İmparator Justinianus
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-ruler-combined text-primary me-2"></i>
+                                <strong>Uzunluk:</strong> 365 Metre
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-map-marker-alt text-primary me-2"></i>
+                                <strong>Konum:</strong> Serdivan, Sakarya
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-award text-primary me-2"></i>
+                                <strong>Statü:</strong> UNESCO Geçici Miras
+                            </li>
+                        </ul>
+                        <hr>
+                        <a href="https://tr.wikipedia.org/wiki/Justinianus_K%C3%B6pr%C3%BCs%C3%BC" target="_blank" class="btn btn-dark w-100 rounded-pill">Daha Fazla Oku</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-box text-center">
+                <h3><i class="fas fa-history text-info me-3"></i>Tarihsel Kronoloji</h3>
+                <div class="row g-4">
+                    <div class="col-6 col-md-3">
+                        <div class="timeline-year">558</div>
+                        <div class="timeline-text">İnşaatına Başlandı</div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="timeline-year">560</div>
+                        <div class="timeline-text">Yapım Tamamlandı</div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="timeline-year">1995</div>
+                        <div class="timeline-text">Korumaya Alındı</div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="timeline-year">2018</div>
+                        <div class="timeline-text">UNESCO Geçici Liste</div>
+                    </div>
+                </div>
+            </div>
+            </article>
+    </main>
+
+    <footer class="py-5 bg-dark-blue text-white">
+        <div class="container text-center">
+            <h5 class="fw-bold mb-3">MHD AMIR IDRES</h5>
+            <div class="d-flex justify-content-center gap-3 mb-4">
+                <a href="https://github.com/emiridris" target="_blank" class="text-white social-btn"><i class="fab fa-github fa-2x"></i></a>
+                <a href="https://www.instagram.com/emiridris54" target="_blank" class="text-white social-btn"><i class="fab fa-instagram fa-2x"></i></a>
+            </div>
+            <p class="small opacity-50 mb-0">&copy; 2026 - Tüm Hakları Saklıdır</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
