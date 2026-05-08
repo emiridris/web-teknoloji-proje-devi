@@ -6,80 +6,203 @@
     <title>MHD AMIR IDRES - Özgeçmiş</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #f8f9fa; }
+        .bg-dark-blue { background-color: #001f3f; }
+        .text-info-custom { color: #0dcaf0; }
+
+        /* CV Sidebar ve İçerik Stilleri */
+        .cv-sidebar {
+            background-color: #fff;
+            border-right: 1px solid #eee;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 5px solid #0dcaf0;
+            padding: 5px;
+        }
+
+        .section-title {
+            border-left: 5px solid #0dcaf0;
+            padding-left: 15px;
+            margin-bottom: 25px;
+            font-weight: 700;
+            color: #001f3f;
+        }
+
+        /* Zaman Çizelgesi (Timeline) */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: #dee2e6;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: -34px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #0dcaf0;
+        }
+
+        .skill-bar { height: 8px; border-radius: 5px; margin-bottom: 15px;}
+        
+        .project-card {
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover {
+            transform: scale(1.02);
+        }
+
+        footer .social-btn { transition: all 0.3s ease; opacity: 0.8; }
+        footer .social-btn:hover { transform: translateY(-5px); opacity: 1; color: #0dcaf0 !important; }
+    </style>
 </head>
 <body>
 
     <header>
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark-blue shadow-sm mb-5">
             <div class="container">
-                <a class="navbar-brand" href="index.html">Amir Idres</a>
-                <div class="navbar-nav">
-                    <a class="nav-link" href="index.html">Hakkında</a>
-                    <a class="nav-link active" href="cv.html">Özgeçmiş</a>
-                    <a class="nav-link" href="sehir.html">Şehrim</a>
-                    <a class="nav-link" href="mirasimiz.html">Mirasımız</a>
-                    <a class="nav-link" href="iletisim.html">İletişim</a>
-                    <a class="nav-link" href="login.php">Login</a>
+                <a class="navbar-brand fw-bold" href="index.html">Amir <span class="text-info-custom">Idres</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="navbar-nav ms-auto">
+                        <a class="nav-link" href="index.html">Hakkında</a>
+                        <a class="nav-link active" href="cv.html">Özgeçmiş</a>
+                        <a class="nav-link" href="sehir.html">Şehrim</a>
+                        <a class="nav-link" href="mirasimiz.html">Mirasımız</a>
+                        <a class="nav-link" href="iletisim.html">İletişim</a>
+                        <a class="nav-link" href="login.php">Login</a>
+                        <a class="nav-link" href="ilgialanlarim.html">İlgi Alanlarım</a>
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
 
-    <main class="container main-content shadow">
-        <h2 class="text-center mb-4">Özgeçmişim (CV)</h2>
-        
-        <div class="row">
-            <section class="col-md-6">
-                <h4 class="border-bottom pb-2">🎓 Eğitim Bilgileri</h4>
-                <article class="mb-3">
-                    <strong>Sakarya Üniversitesi</strong><br>
-                    Bilgisayar Mühendisliği (1. Sınıf)<br>
-                    <small class="text-muted">2026 - Devam Ediyor</small>
-                </article>
-            </section>
+    <main class="container shadow rounded-4 p-0 my-5 bg-white overflow-hidden">
+        <div class="row g-0">
+            <aside class="col-lg-4 p-4 p-md-5 cv-sidebar bg-light">
+                <div class="text-center mb-4">
+                    <img src="img/profil.jpg" class="profile-img rounded-circle mb-3 shadow-sm" alt="Profil Fotoğrafı" onerror="this.src='https://via.placeholder.com/150'">
+                    <h3 class="fw-bold">MHD AMIR IDRES</h3>
+                    <p class="text-muted">Bilgisayar Mühendisliği Öğrencisi</p>
+                </div>
 
-            <section class="col-md-6">
-                <h4 class="border-bottom pb-2">💻 Yetenekler</h4>
-                <ul class="list-unstyled">
-                    <li>C++ <div class="progress mb-2"><div class="progress-bar bg-info" style="width: 70%"></div></div></li>
-                    <li>C# <div class="progress mb-2"><div class="progress-bar bg-primary" style="width: 60%"></div></div></li>
-                    <li>HTML/CSS <div class="progress mb-2"><div class="progress-bar bg-success" style="width: 50%"></div></div></li>
-                </ul>
-            </section>
-        </div>
+                <hr>
 
-        <hr class="my-4">
+                <div class="mb-4">
+                    <h5 class="fw-bold mb-3"><i class="fas fa-envelope me-2 text-primary"></i> İletişim</h5>
+                    <p class="small mb-1 text-muted">E-posta:</p>
+                    <p class="small fw-bold">b251210576@sakarya.edu.tr</p>
+                    <p class="small mb-1 text-muted">Konum:</p>
+                    <p class="small fw-bold">Sakarya, Türkiye</p>
+                </div>
 
-        <section>
-            <h4 class="mb-3">🚀 Projeler ve İlgi Alanları</h4>
-            <div class="table-responsive">
-                <table class="table table-hover">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>Proje Adı</th>
-                            <th>Teknoloji</th>
-                            <th>Detay</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Web Teknolojileri Ödevi</td>
-                            <td>HTML5, CSS3, Bootstrap</td>
-                            <td>Kişisel web sitesi ve dinamik sayfalar.</td>
-                        </tr>
-                        <tr>
-                            <td>Algoritma Çalışmaları</td>
-                            <td>C++</td>
-                            <td>Problem çözme ve veri yapıları temel projeleri.</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="mb-4">
+                    <h5 class="fw-bold mb-3"><i class="fas fa-code me-2 text-primary"></i> Yetenekler</h5>
+                    
+                    <div class="mb-2 small d-flex justify-content-between"><span>C# (.NET)</span> <span>75%</span></div>
+                    <div class="progress skill-bar"><div class="progress-bar bg-success" style="width: 75%"></div></div>
+
+                    <div class="mb-2 small d-flex justify-content-between"><span>HTML5 & CSS3</span> <span>90%</span></div>
+                    <div class="progress skill-bar"><div class="progress-bar bg-info" style="width: 90%"></div></div>
+
+                    <div class="mb-2 small d-flex justify-content-between"><span>JavaScript</span> <span>70%</span></div>
+                    <div class="progress skill-bar"><div class="progress-bar bg-warning" style="width: 70%"></div></div>
+
+                    <div class="mb-2 small d-flex justify-content-between"><span>C++</span> <span>65%</span></div>
+                    <div class="progress skill-bar"><div class="progress-bar bg-secondary" style="width: 65%"></div></div>
+                </div>
+            </aside>
+
+            <div class="col-lg-8 p-4 p-md-5">
+                
+                <section class="mb-5">
+                    <h3 class="section-title">Eğitim Bilgileri</h3>
+                    <div class="timeline">
+                        <article class="timeline-item">
+                            <h5 class="fw-bold text-dark">Sakarya Üniversitesi</h5>
+                            <p class="text-info-custom fw-bold mb-1">Lisans - Bilgisayar Mühendisliği | 2025 - Günümüz</p>
+                            <p class="text-muted small">Algoritmalar, Programlama Temelleri ve Web Teknolojileri dersleri ile teknik altyapımı güçlendiriyorum.</p>
+                        </article>
+                        
+                        <article class="timeline-item">
+                            <h5 class="fw-bold text-dark">Anadolu Lisesi</h5>
+                            <p class="text-info-custom fw-bold mb-1">Lise Eğitimi | 2020 - 2024</p>
+                            <p class="text-muted small">Sayısal ağırlıklı eğitim programı başarıyla tamamlanmıştır.</p>
+                        </article>
+                    </div>
+                </section>
+
+                <section>
+                    <h3 class="section-title">Projeler & Deneyimler</h3>
+                    
+                    <article class="card border-0 bg-light rounded-4 p-4 mb-3 project-card shadow-sm">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="fw-bold mb-0 text-primary">C# Stok Takip Sistemi</h5>
+                            <span class="badge bg-dark">2025</span>
+                        </div>
+                        <p class="text-muted small mb-0">
+                            Nesne Yönelimli Programlama (OOP) prensipleri kullanılarak geliştirilmiş Masaüstü uygulaması. 
+                            Ürün yönetimi, stok uyarı sistemi ve dosya tabanlı veri saklama özelliklerini içerir.
+                        </p>
+                    </article>
+
+                    <article class="card border-0 bg-light rounded-4 p-4 mb-3 project-card shadow-sm">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="fw-bold mb-0 text-primary">Kişisel Portfolyo Sitesi</h5>
+                            <span class="badge bg-dark">2026</span>
+                        </div>
+                        <p class="text-muted small mb-0">
+                            Responsive tasarım standartlarına uygun, Bootstrap 5 ve PHP kullanılarak geliştirilmiş web projesi. 
+                            API entegrasyonu ve form denetimleri içermektedir.
+                        </p>
+                    </article>
+
+                    <article class="card border-0 bg-light rounded-4 p-4 project-card shadow-sm">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="fw-bold mb-0 text-primary">C++ Veri Yapıları Uygulamaları</h5>
+                            <span class="badge bg-dark">2025</span>
+                        </div>
+                        <p class="text-muted small mb-0">
+                            Bağlı listeler, yığınlar ve ağaç yapılarının C++ diliyle gerçeklenmesi üzerine akademik çalışmalar.
+                        </p>
+                    </article>
+                </section>
             </div>
-        </section>
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2026 - MHD AMIR IDRES | Sakarya Üniversitesi</p>
+    <footer class="py-5 bg-dark-blue text-white">
+        <div class="container text-center">
+            <h5 class="fw-bold mb-3">MHD AMIR IDRES</h5>
+            <div class="d-flex justify-content-center gap-3 mb-4">
+                <a href="https://github.com/emiridris" target="_blank" class="text-white social-btn"><i class="fab fa-github fa-2x"></i></a>
+                <a href="https://www.instagram.com/emiridris54" target="_blank" class="text-white social-btn"><i class="fab fa-instagram fa-2x"></i></a>
+            </div>
+            <p class="small opacity-50 mb-0">&copy; 2026 - Tüm Hakları Saklıdır | b251210576</p>
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
