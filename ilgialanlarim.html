@@ -10,24 +10,28 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     
     <style>
-        body { 
+      body { 
             background-color: #f8f9fa; 
             font-family: 'Poppins', sans-serif; 
-            padding-top: 110px; /* Navbar arkasında kalmayı önler */
+            margin: 0;
+            padding: 0; /* fixed-top olmadığı için padding-top'ı sildik */
         }
-
-        .navbar {
-            background-color: #001f3f !important;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
+        
         .text-info-custom { color: #0dcaf0; }
+        .bg-dark-blue { background-color: #001f3f; }
 
+        /* Navbar yüksekliğini eşitlemek için padding (Hakkında sayfasıyla aynı) */
+        .navbar {
+            padding: 0.5rem 0; 
+            min-height: 70px; /* Standart yükseklik */
+        }
+
+        /* Film Kartları Stili */
         .movie-card {
             border: none;
             border-radius: 15px;
             overflow: hidden;
-            transition: all 0.3s ease-in-out;
+            transition: transform 0.3s ease;
             background: white;
             height: 100%;
             display: flex;
@@ -36,7 +40,7 @@
 
         .movie-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2) !important;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
         }
 
         .img-container {
@@ -53,15 +57,9 @@
         }
 
         .card-body {
-            padding: 1.2rem;
+            padding: 1.5rem;
             text-align: center;
             flex-grow: 1;
-        }
-
-        .card-title {
-            font-size: 1.15rem;
-            font-weight: 700;
-            margin-bottom: 10px;
         }
 
         .badge-year {
@@ -77,89 +75,121 @@
             color: #001f3f;
             font-weight: 600;
             margin-top: auto;
+            border-radius: 8px;
         }
 
-        .btn-imdb:hover {
-            background-color: #0dcaf0;
-            color: white;
+        /* Footer Sosyal Butonlar */
+        .social-btn {
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+        .social-btn:hover {
+            transform: translateY(-5px);
+            opacity: 1;
+            color: #0dcaf0 !important;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark-blue shadow-sm">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">Amir <span class="text-info-custom">Idres</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <div class="navbar-nav ms-auto">
                     <a class="nav-link" href="index.html">Hakkında</a>
                     <a class="nav-link" href="cv.html">Özgeçmiş</a>
                     <a class="nav-link" href="sehir.html">Şehrim</a>
                     <a class="nav-link" href="mirasimiz.html">Mirasımız</a>
-                    <a class="nav-link active" href="ilgialanlarim.html">İlgi Alanlarım</a>
                     <a class="nav-link" href="iletisim.html">İletişim</a>
                     <a class="nav-link" href="login.php">Login</a>
+                    <a class="nav-link active" href="ilgialanlarim.html">İlgi Alanlarım</a>
                 </div>
             </div>
         </div>
     </nav>
-</header>
 
-<main class="container my-5" id="app">
-    <div class="text-center mb-5">
-        <h1 class="display-5 fw-bold">Favori <span class="text-info-custom">Filmlerim</span></h1>
-        <p class="text-muted">Seçtiğim en iyi 6 film.</p>
-        <div class="mx-auto" style="width: 50px; height: 3px; background: #0dcaf0;"></div>
-    </div>
-
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-        <div class="col" v-for="(movie, index) in movies" :key="index">
-            <div class="card movie-card shadow-sm">
-                <div class="img-container">
-                    <img :src="movie.Poster" 
-                         class="movie-img" 
-                         :alt="movie.Title"
-                         @error="event => event.target.src = 'https://via.placeholder.com/400x600?text=Resim+Klasorde+Yok'">
-                </div>
-                <div class="card-body d-flex flex-column">
-                    <h5 class="card-title">{{ movie.Title }}</h5>
-                    <div class="mb-3">
-                        <span class="badge badge-year">{{ movie.Year }}</span>
+    <main class="container shadow rounded-4 p-4 p-md-5 my-5 bg-white" id="app">
+        <section>
+            <div class="text-center mb-5">
+                <h1 class="display-5 fw-bold">Favori <span class="text-primary">Filmlerim</span></h1>
+                <p class="lead text-muted">Ödev kriterlerine uygun olarak API/Veri entegrasyonu.</p>
+                <hr class="mx-auto" style="width: 100px; height: 3px; background-color: #0dcaf0; border: none; opacity: 1;">
+            </div>
+            
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <div class="col" v-for="(movie, index) in movies" :key="index">
+                    <div class="card movie-card shadow-sm">
+                        <div class="img-container">
+                            <img :src="movie.Poster" 
+                                 class="movie-img" 
+                                 :alt="movie.Title"
+                                 @error="event => event.target.src = 'https://via.placeholder.com/400x600?text=Film+Afisi'">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">{{ movie.Title }}</h5>
+                            <div class="mb-3">
+                                <span class="badge badge-year">{{ movie.Year }}</span>
+                            </div>
+                            <a :href="movie.Imdb" target="_blank" class="btn btn-imdb">
+                                <i class="fab fa-imdb me-2"></i>Detaylara Git
+                            </a>
+                        </div>
                     </div>
-                    <a :href="movie.Imdb" target="_blank" class="btn btn-imdb">
-                        <i class="fab fa-imdb me-2"></i>Detaylar
-                    </a>
                 </div>
             </div>
+        </section>
+    </main>
+
+    <footer class="py-5 mt-auto bg-dark-blue text-white">
+        <div class="container">
+            <div class="row gy-4 align-items-start">
+                <div class="col-lg-5 col-md-12 text-center text-lg-start">
+                    <h5 class="fw-bold mb-3 border-bottom border-info d-inline-block pb-1">MHD AMIR IDRES</h5>
+                    <p class="small text-light opacity-75 pe-lg-5">
+                        Yazılım dünyasında sürekli öğrenen ve üreten bir mühendis adayıyım.
+                    </p>
+                </div>
+                <div class="col-lg-4 col-md-6 text-center text-lg-start">
+                    <h5 class="fw-bold mb-3">Hızlı İletişim</h5>
+                    <div class="d-flex flex-column gap-2">
+                        <span class="small"><i class="fas fa-envelope text-info me-2"></i> amir.idres@sakarya.edu.tr</span>
+                        <span class="small"><i class="fas fa-map-marker-alt text-info me-2"></i> Sakarya / Türkiye</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center text-lg-end">
+                    <h5 class="fw-bold mb-3">Beni Takip Et</h5>
+                    <div class="d-flex justify-content-center justify-content-lg-end gap-3">
+                        <a href="https://github.com/emiridris" target="_blank" class="text-white social-btn"><i class="fab fa-github fa-2x"></i></a>
+                        <a href="https://www.instagram.com/emiridris54" target="_blank" class="text-white social-btn"><i class="fab fa-instagram fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-5 mb-4 border-light opacity-25">
+            <p class="text-center mb-0 small opacity-50">&copy; 2026 - Tüm Hakları Saklıdır | Web Teknolojileri Projesi</p>
         </div>
-    </div>
-</main>
+    </footer>
 
-<footer class="bg-dark text-white py-4 mt-5">
-    <div class="container text-center text-secondary small">
-        © 2026 Mhd Amir Idres | b251210576 | Tüm Hakları Saklıdır.
-    </div>
-</footer>
-
-<script>
-    const { createApp } = Vue;
-    createApp({
-        data() {
-            return {
-                movies: [
-                    { Title: "John Wick", Year: "2014", Poster: "img/john_wick.jpg", Imdb: "https://www.imdb.com/title/tt2911666/" },
-                    { Title: "Real Steel", Year: "2011", Poster: "img/real_steel.jpg", Imdb: "https://www.imdb.com/title/tt0433035/" },
-                    { Title: "The Platform", Year: "2019", Poster: "img/the_platform.jpg", Imdb: "https://www.imdb.com/title/tt8228288/" },
-                    { Title: "Interstellar", Year: "2014", Poster: "img/interstellar.jpg", Imdb: "https://www.imdb.com/title/tt0816692/" },
-                    { Title: "Inception", Year: "2010", Poster: "img/inception.jpg", Imdb: "https://www.imdb.com/title/tt1375666/" },
-                    { Title: "The Dark Knight", Year: "2008", Poster: "img/dark_knight.jpg", Imdb: "https://www.imdb.com/title/tt0468569/" }
-                ]
+    <script>
+        const { createApp } = Vue;
+        createApp({
+            data() {
+                return {
+                    movies: [
+                        { Title: "John Wick", Year: "2014", Poster: "img/john_wick.jpg", Imdb: "https://www.imdb.com/title/tt2911666/" },
+                        { Title: "Real Steel", Year: "2011", Poster: "img/real_steel.jpg", Imdb: "https://www.imdb.com/title/tt0433035/" },
+                        { Title: "The Platform", Year: "2019", Poster: "img/the_platform.jpg", Imdb: "https://www.imdb.com/title/tt8228288/" },
+                        { Title: "Interstellar", Year: "2014", Poster: "img/interstellar.jpg", Imdb: "https://www.imdb.com/title/tt0816692/" },
+                        { Title: "Inception", Year: "2010", Poster: "img/inception.jpg", Imdb: "https://www.imdb.com/title/tt1375666/" },
+                        { Title: "The Dark Knight", Year: "2008", Poster: "img/dark_knight.jpg", Imdb: "https://www.imdb.com/title/tt0468569/" }
+                    ]
+                }
             }
-        }
-    }).mount('#app');
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        }).mount('#app');
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

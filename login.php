@@ -70,6 +70,7 @@
                     <a class="nav-link" href="mirasimiz.html">Mirasımız</a>
                     <a class="nav-link" href="iletisim.html">İletişim</a>
                     <a class="nav-link active" href="login.php">Login</a>
+                    <a class="nav-link" href="ilgialanlarim.html">İlgi Alanlarım</a>
                 </div>
             </div>
         </div>
