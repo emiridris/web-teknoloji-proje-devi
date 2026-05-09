@@ -21,4 +21,4 @@ Projenin yayındaki haline aşağıdaki linkten ulaşabilirsiniz:
 - **Login:** Kullanıcı giriş paneli.
 
 ## 👤 Hazırlayan
-**MHD AMIR IDRES** - Sakarya Üniversitesi Bilgisayar Mühendisliği Öğrencisi****
+**MHD AMIR IDRES** - Sakarya Üniversitesi Bilgisayar Mühendisliği Öğrencisi
